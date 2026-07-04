@@ -1,0 +1,214 @@
+/* 1. إعدادات الصفحة العامة والخطوط */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SF Pro Text', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #f5f3ff 0%, #fdf2f8 100%); /* خلفية ناعمة مستوحاة من ألوان الإنستا المدموجة */
+    color: #2d3748;
+    line-height: 1.8;
+    padding-top: 90px;
+}
+
+/* 2. تنسيق الهيدر (Header & Nav) */
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 75px;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #4c1d95, #c084fc); /* تدرج بنفسجي غامق وفاتح */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: #4a5568;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+nav ul a:hover {
+    color: #4c1d95; /* بنفسجي غامق عند التمرير */
+}
+
+.btn-contact {
+    background: linear-gradient(45deg, #4c1d95, #b45309); /* تدرج فخم مدموج بين البنفسجي الغامق وتدرج لوجو الإنستا */
+    color: white;
+    padding: 10px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-contact:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+/* 3. تنسيق محتوى الصفحة الرئيسي */
+main {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    background: white;
+    padding: 45px;
+    border-radius: 20px;
+    margin-bottom: 35px;
+    box-shadow: 0 10px 25px -5px rgba(76, 29, 149, 0.03), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(76, 29, 149, 0.05);
+}
+
+h1 {
+    font-size: 2.4rem;
+    background: linear-gradient(45deg, #4c1d95, #db2777, #d97706); /* تدرج أيقونة الإنستغرام الكامل مع البنفسجي الغامق */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.intro-p {
+    font-size: 1.2rem;
+    color: #4a5568;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: #4c1d95; /* بنفسجي غامق للعناوين الجانبية */
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #4c1d95, #db2777); /* خط التزيين متدرج */
+    border-radius: 4px;
+}
+
+p {
+    color: #4a5568;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* تنسيق القوائم */
+section ul {
+    padding-right: 25px;
+}
+
+section ul li {
+    margin-bottom: 14px;
+    color: #2d3748;
+    font-size: 1.05rem;
+}
+
+/* 4. تنسيق بطاقات المشاريع */
+.project-card {
+    background-color: #fafafa;
+    border: 1px solid #e2e8f0;
+    padding: 30px;
+    border-radius: 16px;
+    margin-top: 25px;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(76, 29, 149, 0.07);
+    background-color: #ffffff;
+    border-color: #c084fc;
+}
+
+.project-badge {
+    display: inline-block;
+    background-color: #f3e8ff; /* خلفية ناعمة للبادج */
+    color: #6b21a8;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.project-card h3 {
+    color: #1a202c;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.project-card a {
+    display: inline-block;
+    color: #4c1d95; /* روابط بنفسجية غامقة */
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: color 0.2s;
+}
+
+.project-card a:hover {
+    color: #db2777; /* تتحول للوردي عند التمرير كحركة تفاعلية */
+}
+
+/* 5. تنسيق الفوتر */
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    color: #718096;
+    font-size: 0.95rem;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: #4c1d95;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: #db2777;
+}
