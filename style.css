@@ -1,236 +1,325 @@
-/* 1. إعدادات الصفحة العامة والخطوط */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
+
+/* Dynamic Color Variables matched with Logo */
+:root {
+  --bg-body: #FAFAFB;
+  --bg-card: #FFFFFF;
+  --bg-nav: rgba(255, 255, 255, 0.85);
+  
+  --text-main: #2A1A4A;
+  --text-muted: #625580;
+
+  --accent-pink: #FF66A3;
+  --accent-blue: #66C2FF;
+  --logo-gradient: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-blue) 100%);
+  
+  --border-color: #EAE6F2;
+  --shadow-soft: 0 10px 30px rgba(42, 26, 74, 0.05);
+}
+
+[data-theme="dark"] {
+  --bg-body: #070314;
+  --bg-card: #120A2B;
+  --bg-nav: rgba(7, 3, 20, 0.85);
+
+  --text-main: #FDFBFF;
+  --text-muted: #A397C2;
+
+  --border-color: #261B45;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Tajawal', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 body {
-    font-family: 'SF Pro Text', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(135deg, #f5f3ff 0%, #fdf2f8 100%); /* خلفية ناعمة مستوحاة من ألوان الإنستا المدموجة */
-    color: #2d3748;
-    line-height: 1.8;
-    padding-top: 90px;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.6;
 }
 
-/* 2. تنسيق الهيدر (Header & Nav) */
-header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 75px;
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(12px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-    z-index: 1000;
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-header .logo {
-    font-size: 1.4rem;
-    font-weight: 700;
-    background: linear-gradient(45deg, #4c1d95, #c084fc); /* تدرج بنفسجي غامق وفاتح */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+/* Gradient Utilities */
+.text-gradient {
+  background: var(--logo-gradient);
+  background-clip: text; /* السطر القياسي الحديث */
+  -webkit-background-clip: text; /* لدعم متصفحات Safari و Chrome القديمة */
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+} 
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background: var(--bg-nav);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+  padding: 15px 0;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 35px;
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav ul a {
-    text-decoration: none;
-    color: #4a5568;
-    font-weight: 600;
-    transition: color 0.2s ease;
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
-nav ul a:hover {
-    color: #4c1d95; /* بنفسجي غامق عند التمرير */
+.logo-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
-.btn-contact {
-    background: linear-gradient(45deg, #4c1d95, #b45309); /* تدرج فخم مدموج بين البنفسجي الغامق وتدرج لوجو الإنستا */
-    color: white;
-    padding: 10px 24px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 600;
-    transition: transform 0.2s, opacity 0.2s;
+.nav-menu {
+  display: flex;
+  gap: 25px;
+  align-items: center;
 }
 
-.btn-contact:hover {
-    transform: translateY(-1px);
-    opacity: 0.9;
+.nav-menu a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
-/* 3. تنسيق محتوى الصفحة الرئيسي */
-main {
-    max-width: 850px;
-    margin: 40px auto;
-    padding: 0 20px;
+.nav-menu a:hover {
+  color: var(--text-main);
 }
 
-section {
-    background: white;
-    padding: 45px;
-    border-radius: 20px;
-    margin-bottom: 35px;
-    box-shadow: 0 10px 25px -5px rgba(76, 29, 149, 0.03), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
-    border: 1px solid rgba(76, 29, 149, 0.05);
+/* Theme Button */
+.theme-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
 }
 
-h1 {
-    font-size: 2.4rem;
-    background: linear-gradient(45deg, #4c1d95, #db2777, #d97706); /* تدرج أيقونة الإنستغرام الكامل مع البنفسجي الغامق */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
-    font-weight: 700;
-    text-align: center;
+[data-theme="dark"] .icon-dark,
+[data-theme="light"] .icon-light {
+  display: none;
 }
 
-.intro-p {
-    font-size: 1.2rem;
-    color: #4a5568;
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
+/* Hero Section */
+.hero-section {
+  padding: 160px 0 100px;
+  text-align: center;
 }
 
-h2 {
-    font-size: 1.6rem;
-    color: #4c1d95; /* بنفسجي غامق للعناوين الجانبية */
-    margin-bottom: 25px;
-    position: relative;
-    padding-bottom: 10px;
+.badge {
+  background: rgba(255, 102, 163, 0.1);
+  color: var(--accent-pink);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 102, 163, 0.2);
 }
 
-h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, #4c1d95, #db2777); /* خط التزيين متدرج */
-    border-radius: 4px;
+.hero-title {
+  font-size: 3rem;
+  margin: 20px 0;
+  font-weight: 800;
 }
 
-p {
-    color: #4a5568;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
+.hero-desc {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  color: var(--text-muted);
+  font-size: 1.15rem;
 }
 
-/* تنسيق القوائم */
-section ul {
-    padding-right: 25px;
+/* Buttons */
+.btn-gradient {
+  background: var(--logo-gradient);
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(255, 102, 163, 0.3);
 }
 
-section ul li {
-    margin-bottom: 14px;
-    color: #2d3748;
-    font-size: 1.05rem;
+.btn-outline {
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 10px;
 }
 
-/* 4. تنسيق بطاقات المشاريع */
+/* Projects Cards */
+.projects-section {
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
 .project-card {
-    background-color: #fafafa;
-    border: 1px solid #e2e8f0;
-    padding: 30px;
-    border-radius: 16px;
-    margin-top: 25px;
-    position: relative;
-    transition: transform 0.3s, box-shadow 0.3s;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(76, 29, 149, 0.07);
-    background-color: #ffffff;
-    border-color: #c084fc;
+.placeholder-img {
+  height: 200px;
+  background: var(--border-color);
 }
 
-.project-badge {
-    display: inline-block;
-    background-color: #f3e8ff; /* خلفية ناعمة للبادج */
-    color: #6b21a8;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-bottom: 12px;
+.project-info {
+  padding: 25px;
 }
 
-.project-card h3 {
-    color: #1a202c;
-    margin-bottom: 12px;
-    font-size: 1.3rem;
+.project-tag {
+  color: var(--accent-pink);
+  font-size: 0.85rem;
+  font-weight: 700;
 }
 
-.project-card a {
-    display: inline-block;
-    color: #4c1d95; /* روابط بنفسجية غامقة */
-    text-decoration: none;
-    font-weight: 600;
-    margin-top: 15px;
-    transition: color 0.2s;
+.project-info h3 {
+  margin: 8px 0;
 }
 
-.project-card a:hover {
-    color: #db2777; /* تتحول للوردي عند التمرير كحركة تفاعلية */
+.project-info p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
 }
 
-/* 5. تنسيق الفوتر */
-footer {
-    text-align: center;
-    padding: 50px 20px;
-    color: #718096;
-    font-size: 0.95rem;
+.project-links {
+  display: flex;
+  gap: 15px;
 }
 
-.social-links {
-    margin-top: 15px;
+.link-btn {
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+/* --- Projects Image Styling --- */
+.project-image {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background-color: var(--border-color);
 }
 
-.social-links a {
-    color: #4c1d95;
-    text-decoration: none;
-    margin: 0 12px;
-    font-weight: 600;
-    transition: color 0.2s;
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.social-links a:hover {
-    color: #db2777;
+.project-card:hover .card-img {
+  transform: scale(1.05); /* زوم ناعم للصورة عند التحويم */
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #121212; 
-        color: #f4f7f6; 
-    }
+.btn-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: var(--border-color);
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
 
-    section {
-        background-color: #1e1e1e; 
-        box-shadow: 0 4px 6px rgba(255, 255, 255, 0.05);
-    }
+.btn-card:hover {
+  background: var(--logo-gradient);
+  color: #fff;
+}
 
-    h2 {
-        color: #818cf8;
-        border-bottom-color: #374151;
-    }
+/* --- Contact Section & Social Buttons --- */
+.contact-section {
+  padding: 100px 0;
+  border-top: 1px solid var(--border-color);
+}
 
-    .skills-list li {
-        background-color: #312e81; 
-        color: #e0e7ff;
-    }
+.contact-desc {
+  color: var(--text-muted);
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+.social-links-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+}
+
+.social-card i {
+  font-size: 1.3rem;
+}
+
+.social-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-pink);
+  box-shadow: 0 10px 20px rgba(255, 102, 163, 0.2);
 }

@@ -1,87 +1,131 @@
 ﻿<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>السيرة الذاتية | إسراء سالم</title>
-
-    <!-- وسوم الـ SEO والميتادات الاحترافية للواجب -->
-    <meta name="description" content="الصفحة الشخصية ومعرض أعمال إسراء سالم - مصممة واجهات وتجربة مستخدم ومطورة ويب.">
-    <meta property="og:title" content="السيرة الذاتية | إسراء سالم">
-    <meta property="og:description" content="تصفح معرض أعمالي ومشاريعي في تصميم الـ UI/UX وتطوير الويب.">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- ربط ملف الـ CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إسراء سالم | UI/UX Designer & Front-End Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- 1. الهيدر (Header) -->
-    <header>
-        <div class="logo">إسراء سالم</div>
-        <!-- 2. الناف بار (Nav) -->
-        <nav aria-label="القائمة الرئيسية">
-            <ul>
-                <li><a href="#about">نبذة عني</a></li>
-                <li><a href="#skills">المهارات</a></li>
-                <li><a href="#projects">المشاريع</a></li>
-            </ul>
-        </nav>
-        <!-- رابط الواتساب المباشر للتواصل -->
-        <a href="https://wa.me/message/4I7K3YBCEGDDP1" target="_blank" rel="noopener" class="btn-contact">تواصل معي مباشر</a>
-    </header>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo-link">
+        <img src="ES.png" alt="Logo Esraa Salem" class="logo-img">
+        <span class="logo-text">Esraa<span class="text-gradient">.Salem</span></span>
+      </a>
 
-    <!-- 3. المحتوى الرئيسي (Main) -->
-    <main>
-        <!-- القسم الأول: نبذة شخصية (بدون صورة ومتناسق) -->
-        <section id="about" aria-labelledby="about-heading">
-            <h1 id="about-heading">مرحباً، أنا إسراء سالم</h1>
-            <p class="intro-p">أنا مصممة واجهات وتجربة مستخدم (UI/UX) ومطورة ويب. أركز على بناء أنظمة التصميم الاحترافية والتطبيقات الرقمية المبتكرة الموجهة لحل المشكلات وتسهيل تجربة المستخدمين مع دمج تقنيات الذكاء الاصطناعي لتطوير الواجهات الرقمية.</p>
-        </section>
+      <nav class="nav-menu">
+        <a href="#about">عني</a>
+        <a href="#projects">المشاريع</a>
+        <a href="#skills">المهارات</a>
+        <a href="#contact" class="btn-primary-sm">تواصل معي</a>
+      </nav>
 
-        <!-- القسم الثاني: المهارات (Section 2) -->
-        <section id="skills" aria-labelledby="skills-heading">
-            <h2 id="skills-heading">المهارات والتقنيات</h2>
-            <ul>
-                <li>تصميم واجهات المستخدم وبناء أنظمة التصميم (Design Systems) المتكاملة في Figma.</li>
-                <li>تطوير الواجهات الأمامية باستخدام تقنيات الـ HTML5 و CSS3.</li>
-                <li>تخطيط وإجراء أبحاث تجربة المستخدم (UX Research) ورسم رحلة المستخدم.</li>
-                <li>دمج أدوات الذكاء الاصطناعي (AI) لتحسين وتطوير كفاءة التصميم الرقمي.</li>
-            </ul>
-        </section>
+      <button id="theme-toggle" class="theme-btn" aria-label="تبديل المظهر">
+        <i class="fa-solid fa-moon icon-dark"></i>
+        <i class="fa-solid fa-sun icon-light"></i>
+      </button>
+    </div>
+  </header>
 
-        <!-- القسم الثالث: المشاريع (Section 3) -->
-        <section id="projects" aria-labelledby="projects-heading">
-            <h2 id="projects-heading">المشاريع الحالية</h2>
-            
-            <!-- مشروع سراج -->
-            <article class="project-card">
-                <div class="project-badge">UI/UX Design</div>
-                <h3>مشروع منصة "سراج" (Siraj)</h3>
-                <p>تطبيق وموقع إلكتروني مبتكر صُمم خصيصاً ليربط الأمهات بالمراكز المتخصصة التي تقدم أنشطة تفاعلية وترفيهية متميزة للأطفال، مما يسهل عملية البحث والحجز الموثوق.</p>
-                <a href="#" target="_blank">عرض نموذج Figma والتصميم ←</a>
-            </article>
-
-            <!-- مشروع باثيريا -->
-            <article class="project-card">
-                <div class="project-badge">UI/UX & AI</div>
-                <h3>مشروع منصة "PathEra" الإرشادية</h3>
-                <p>منصة رقمية متطورة موجهة للسوق العربي، تهدف لمساعدة المستخدمين على رسم مساراتهم المهنية بدقة واكتشاف الفرص الوظيفية الملائمة باستخدام خوارزميات الذكاء الاصطناعي.</p>
-                <a href="#" target="_blank">عرض نموذج Figma والتصميم ←</a>
-            </article>
-        </section>
-    </main>
-
-    <!-- 4. الفوتر (Footer) -->
-    <footer>
-        <p>© 2026 إسراء سالم. جميع الحقوق محفوظة.</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/esraa-salem-354059311?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener">LinkedIn</a> | 
-            <a href="https://www.instagram.com/es.salem1?igsh=bmFyMmg0aW9tNXZz&utm_source=qr" target="_blank" rel="noopener">Instagram</a> |
-            <a href="https://wa.me/message/4I7K3YBCEGDDP1" target="_blank" rel="noopener">WhatsApp</a>
+  <!-- Hero Section -->
+  <section id="about" class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="badge">مرحباً بك في عالمي الرقمي 👋</span>
+        <h1 class="hero-title">
+          أنا <span class="text-gradient">إسراء سالم</span><br>
+          مصممة واجهات ومطورة Front-End
+        </h1>
+        <p class="hero-desc">
+          متخصصة في ابتكار وتطوير تجارب رقمية تجمع بين جمالية التصميم وسلاسة الكود البرمجي.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-gradient">عرض الأعمال</a>
+          <a href="#contact" class="btn-outline">تواصل مباشر</a>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
+  <script src="script.js"></script>
+  <!-- قسم المشاريع (Projects Section) -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <h2 class="section-title">أبرز <span class="text-gradient">الأعمال والحلول</span></h2>
+      
+      <div class="projects-grid">
+        
+        <!-- 1. مشروع سراج -->
+        <article class="project-card">
+          <div class="project-image">
+            <img src="1.jpg" alt="مشروع منصة سراج" class="card-img">
+          </div>
+          <div class="project-info">
+            <span class="project-tag">UI/UX Design • Mobile App</span>
+            <h3>منصة "سراج" (Siraj)</h3>
+            <p>منصة رقمية مساعدة لأولياء الأمور لاكتشاف وتوفير الأنشطة التعليمية والترفيهية للأطفال بحجز موثوق ومباشر.</p>
+            <div class="project-links">
+              <a href="https://www.behance.net/gallery/249749255/_" target="_blank" class="btn-card"><i class="fa-brands fa-behance"></i> عرض على Behance</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. مشروع PathEra -->
+        <article class="project-card">
+          <div class="project-image">
+            <!-- ضعي اسم صورة مشروع باثيرا هنا بدلاً من pathera.jpg -->
+            <img src="pathera.jpg" alt="مشروع منصة PathEra" class="card-img">
+          </div>
+          <div class="project-info">
+            <span class="project-tag">UI/UX & Web Development</span>
+            <h3>منصة "PathEra" الإرشادية</h3>
+            <p>منصة موجهة للمحتوى المهني مساعدة للمستخدمين في رسم مساراتهم المهنية واكتشاف الفرص الوظيفية بدقة.</p>
+            <div class="project-links">
+              <a href="https://www.behance.net/gallery/249749255/_" target="_blank" class="btn-card"><i class="fa-brands fa-behance"></i> التفاصيل</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم تواصل معي (Contact Section) -->
+  <section id="contact" class="contact-section">
+    <div class="container text-center">
+      <h2 class="section-title">لنعمل <span class="text-gradient">معاً!</span></h2>
+      <p class="contact-desc">هل لديك فكرة مشروع يسعدني تواصلك معي وبناء مشاريع رائعة .</p>
+
+      <div class="social-links-grid">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/966545916805" target="_blank" class="social-card whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>واتساب</span>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/es.salem1/" target="_blank" class="social-card instagram">
+          <i class="fa-brands fa-instagram"></i>
+          <span>انستقرام</span>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/esraa-salem-354059311?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" class="social-card linkedin">
+          <i class="fa-brands fa-linkedin-in"></i>
+          <span>لنكد إن</span>
+        </a>
+
+        <!-- Behance -->
+        <a href="https://www.behance.net/gallery/249749255/_" target="_blank" class="social-card behance">
+          <i class="fa-brands fa-behance"></i>
+          <span>بيهانس</span>
+        </a>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
