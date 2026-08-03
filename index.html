@@ -17,12 +17,35 @@
         <span class="logo-text">Esraa<span class="text-gradient">.Salem</span></span>
       </a>
 
-      <nav class="nav-menu">
-        <a href="#about">عني</a>
-        <a href="#projects">المشاريع</a>
-        <a href="#skills">المهارات</a>
-        <a href="#contact" class="btn-primary-sm">تواصل معي</a>
+     <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo-link">
+        <img src="ES.png" alt="Logo Esraa Salem" class="logo-img">
+        <span class="logo-text">Esraa<span class="text-gradient">.Salem</span></span>
+      </a>
+
+      <!-- قائمة الملاحة -->
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#about" class="nav-link">عني</a>
+        <a href="#projects" class="nav-link">المشاريع</a>
+        <a href="#skills" class="nav-link">المهارات</a>
+        <a href="#contact" class="btn-primary-sm nav-link">تواصل معي</a>
       </nav>
+
+      <div class="nav-actions">
+        <!-- زر التبديل -->
+        <button id="theme-toggle" class="theme-btn" aria-label="تبديل المظهر">
+          <i class="fa-solid fa-moon icon-dark"></i>
+          <i class="fa-solid fa-sun icon-light"></i>
+        </button>
+
+        <!-- زر القائمة للجوال (Hamburger Button) -->
+        <button id="nav-toggle" class="hamburger-btn" aria-label="فتح القائمة">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
 
       <button id="theme-toggle" class="theme-btn" aria-label="تبديل المظهر">
         <i class="fa-solid fa-moon icon-dark"></i>

@@ -322,4 +322,60 @@ body {
   transform: translateY(-5px);
   border-color: var(--accent-pink);
   box-shadow: 0 10px 20px rgba(255, 102, 163, 0.2);
+
+}
+/* --- Hamburger & Responsive Navigation --- */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hamburger-btn {
+  display: none; /* مخفي في الشاشات الكبيرة */
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* التنسيق الخاص بالشاشات الصغيرة (الجوال) */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: block; /* إظهار الزر في الجوال */
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    right: -100%; /* إخفاء القائمة خارج الشاشة */
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: var(--bg-body);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transition: right 0.4s ease;
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* عند فتح القائمة */
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-menu a {
+    font-size: 1.3rem;
+  }
+
+  .hero-title {
+    font-size: 2.1rem; /* تصغير حجم العنوان للجوال */
+  }
+
+  .hero-section {
+    padding: 130px 0 60px;
+  }
 }
